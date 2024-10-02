@@ -23,10 +23,11 @@ class Groups(Resource):
 
             cursor.execute('SELECT * FROM groups')
             for row in cursor:
-                id = row['ID']
-                name = row['TITLE']
-                url = row['URL']
-                self.groups_list.append({'id': id, 'name': name, 'url': url})
+                id = row['id']
+                id_faculty = row['id_faculty']
+                name = row['title']
+                url = row['url']
+                self.groups_list.append({'id': id, 'id_faculty': id_faculty, 'name': name, 'url': url})
 
             conn.close()
         except Exception as e:
